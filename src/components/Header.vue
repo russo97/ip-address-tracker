@@ -2,13 +2,21 @@
   <header class="header">
     <div class="header__container container">
       <h1 class="header__title">IP Address Tracker</h1>
+
+      <IpAddress />
     </div>
   </header>
 </template>
 
 <script>
+  import IpAddress from "./IpAddress.vue";
+
   export default {
-    name: "Header"
+    name: "Header",
+
+    components: {
+      IpAddress
+    }
   }
 </script>
 
