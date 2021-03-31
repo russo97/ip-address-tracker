@@ -1,0 +1,18 @@
+
+$baseSize: 1.125rem;
+
+$white: #fff;
+$darkGray: hsl(0, 0%, 59%);
+$veryDarkGray: hsl(0, 0%, 17%);
+
+$breakpoints-up: (
+  "mobile": 23.4375rem,
+  "tablet": 48rem,
+  "desktop": 90rem
+);
+
+$breakpoints-down: (
+  "mobile": 23.375rem,
+  "tablet": 47.9375rem,
+  "desktop": 89.9375rem
+);
