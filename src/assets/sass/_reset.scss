@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0 none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  position: relative;
+}
