@@ -5,7 +5,7 @@
 
       <IpAddress />
 
-      <IpDetails />
+      <IpDetails :ip_address="user_ip" />
     </div>
   </header>
 </template>
@@ -17,9 +17,30 @@
   export default {
     name: "Header",
 
+    data () {
+      return {
+        isp: '',
+        user_ip: '8.8.8.8',
+        location: '',
+        timezone: ''
+      }
+    },
+
     components: {
       IpAddress,
       IpDetails
+    },
+
+    async created () {
+      const ipinfo = await ( await fetch('http://www.geoplugin.net/json.gp') ).json();
+
+      this.user_ip = ipinfo.geoplugin_request;
+    },
+
+    watch: {
+      user_ip () {
+        console.log('user ip loaded')
+      }
     }
   }
 </script>

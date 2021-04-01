@@ -3,22 +3,22 @@
     <div class="details__container">
       <div class="details__box">
         <span class="details__title">ip address</span>
-        <span class="details__value">192.169.0.1</span>
+        <span class="details__value">{{ ip_address }}</span>
       </div>
 
       <div class="details__box">
         <span class="details__title">location</span>
-        <span class="details__value">Brooklyn, NY 10001</span>
+        <span class="details__value">{{ location }}</span>
       </div>
 
       <div class="details__box">
         <span class="details__title">timezone</span>
-        <span class="details__value">UTC -05:00</span>
+        <span class="details__value">{{ timezone }}</span>
       </div>
 
       <div class="details__box">
         <span class="details__title">isp</span>
-        <span class="details__value">SpaceX Starlink</span>
+        <span class="details__value">{{ isp }}</span>
       </div>
     </div>
   </section>
@@ -26,7 +26,33 @@
 
 <script>
   export default {
-    name: "IpDetails"
+    name: "IpDetails",
+
+    props: {
+      ip_address: {
+        type: String,
+        required: true,
+        default: 'loading...'
+      },
+
+      location: {
+        type: String,
+        required: true,
+        default: 'loading...'
+      },
+
+      timezone: {
+        type: String,
+        required: true,
+        default: 'loading...'
+      },
+
+      isp: {
+        type: String,
+        required: true,
+        default: 'loading...'
+      }
+    }
   }
 </script>
 
