@@ -4,18 +4,22 @@
       <h1 class="header__title">IP Address Tracker</h1>
 
       <IpAddress />
+
+      <IpDetails />
     </div>
   </header>
 </template>
 
 <script>
   import IpAddress from "./IpAddress.vue";
+  import IpDetails from "./IpDetails.vue";
 
   export default {
     name: "Header",
 
     components: {
-      IpAddress
+      IpAddress,
+      IpDetails
     }
   }
 </script>
@@ -34,10 +38,12 @@
     }
 
     &__container {
+      height: 100%;
       display: flex;
       align-items: center;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      position: relative;
     }
 
     &__title {
