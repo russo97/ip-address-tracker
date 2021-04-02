@@ -37,11 +37,11 @@
 <style lang="scss">
   .address {
     width: 100%;
-    height: 60px;
-    max-width: 558px;
-    margin-top: 32px;
+    height: 3.75rem;
     overflow: hidden;
-    border-radius: 6px;
+    margin-top: 24rem;
+    max-width: 34.875rem;
+    border-radius: .375rem;
 
     &__container {
       height: 100%;
@@ -51,10 +51,10 @@
     }
 
     &__input {
-      flex: 1 calc(100% - 58px);
+      flex: 1 calc(100% - 3.625rem);
       height: 100%;
       border: 0 none;
-      padding-left: 24px;
+      padding-left: 1.5rem;
       font-size: $baseSize;
       font-family: Rubik, sans-serif;
     }
@@ -64,7 +64,7 @@
       align-items: center;
       justify-content: center;
 
-      flex: 1 58px;
+      flex: 1 3.625rem;
       height: 100%;
       color: $white;
       border: 0 none;

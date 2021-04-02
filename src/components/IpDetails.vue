@@ -61,10 +61,10 @@
     width: 100%;
     height: auto;
     max-width: 90%;
-    border-radius: 6px;
+    border-radius: .375rem;
     background-color: $white;
 
-    bottom: 0px;
+    bottom: 0rem;
     position: absolute;
     transform: translateY(50%);
 
@@ -73,25 +73,25 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      margin: 10px;
+      margin: .625rem;
 
       @include breakpoint-up (tablet) {
-        margin: 20px 10px;
         flex-direction: row;
+        margin: 1.25rem .625rem;
       }
     }
 
     &__box {
       display: flex;
-      margin-bottom: 12px;
+      margin-bottom: .75rem;
       align-items: center;
       flex-direction: column;
       justify-content: center;
 
       @include breakpoint-up (tablet) {
         margin: 0;
-        width: 200px;
-        padding: 0 10px;
+        width: 12.5rem;
+        padding: 0 .625rem;
         position: relative;
         align-self: stretch;
         align-items: flex-start;
@@ -100,7 +100,7 @@
     }
 
     &__title {
-      font-size: 12px;
+      font-size: .75rem;
       font-weight: 500;
       color: $darkGray;
       text-transform: uppercase;
@@ -108,8 +108,8 @@
     }
 
     &__value {
-      margin-top: 5px;
       font-weight: 500;
+      margin-top: .3125rem;
       color: $veryDarkGray;
       font-size: $baseSize * 1.1;
       font-family: Rubik, sans-serif;
