@@ -75,7 +75,7 @@
       justify-content: center;
       margin: 10px;
 
-      @include breakpoint-up (desktop) {
+      @include breakpoint-up (tablet) {
         margin: 20px 10px;
         flex-direction: row;
       }
@@ -88,7 +88,7 @@
       flex-direction: column;
       justify-content: center;
 
-      @include breakpoint-up (desktop) {
+      @include breakpoint-up (tablet) {
         margin: 0;
         width: 200px;
         padding: 0 10px;
