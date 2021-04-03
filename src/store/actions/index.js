@@ -1,4 +1,8 @@
 
+const setIPAddress = ({ commit }, payload) => {
+  commit('CAPTURE_USER_IP', payload);
+};
+
 const captureUserIP = async ({ commit }) => {
   const URL_FETCH = import.meta.env.VITE_GEO_PLUGIN;
 
@@ -23,10 +27,17 @@ const captureUserInfo = async ({ commit, state }) => {
     }
   } = await IPIFY_INFO;
 
+  const LOC_GEO = `${lat}|${lng}`;
+
+  commit('CAPTURE_USER_ISP', isp);
+  commit('CAPTURE_USER_CITY', city);
+  commit('CAPTURE_USER_REGION', region);
+  commit('CAPTURE_USER_LATLNG', LOC_GEO);
   commit('CAPTURE_USER_TIMEZONE', timezone);
 };
 
 export default {
+  setIPAddress,
   captureUserIP,
   captureUserInfo
 }

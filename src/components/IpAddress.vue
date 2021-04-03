@@ -7,14 +7,30 @@
         class="address__input"
         :maxlength="maxlength"
         placeholder="Search for any IP address or domain">
-      <button class="address__button">&rsaquo;</button>
+      <button class="address__button" @click.prevent="searchForIPAddress">&rsaquo;</button>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
+
   export default {
     name: "IpAddress",
+
+    methods: {
+      ...mapActions([
+        'setIPAddress'
+      ]),
+
+      searchForIPAddress () {
+        const { validIPAddress, setIPAddress, value } = this;
+
+        if (validIPAddress) {
+          return setIPAddress(value);
+        }
+      }
+    },
 
     data () {
       return {

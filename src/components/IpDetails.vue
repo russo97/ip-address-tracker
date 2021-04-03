@@ -36,6 +36,7 @@
       ...mapState([
         'ISP',
         'userIP',
+        'loc_geo'
       ]),
 
       ...mapGetters([
@@ -46,8 +47,6 @@
 
     watch: {
       userIP (val) {
-        console.log(import.meta.env)
-
         this.captureUserInfo();
       }
     }
