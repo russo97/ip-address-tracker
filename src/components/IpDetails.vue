@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
 
   export default {
     name: "IpDetails",
@@ -34,7 +34,10 @@
       ...mapState([
         'ISP',
         'userIP',
-        'location',
+        'location'
+      ]),
+
+      ...mapGetters([
         'timezone'
       ])
     }
