@@ -3,14 +3,6 @@ const setIPAddress = ({ commit }, payload) => {
   commit('CAPTURE_USER_IP', payload);
 };
 
-const captureUserIP = async ({ commit }) => {
-  const URL_FETCH = import.meta.env.VITE_GEO_PLUGIN;
-
-  const ipinfo = await ( await fetch(URL_FETCH) ).json();
-
-  commit('CAPTURE_USER_IP', await ipinfo.geoplugin_request);
-};
-
 const captureUserInfo = async ({ commit, state }) => {
   const { VITE_IPIFY_URL, VITE_API_KEY } = import.meta.env;
 
@@ -36,8 +28,12 @@ const captureUserInfo = async ({ commit, state }) => {
   commit('CAPTURE_USER_TIMEZONE', timezone);
 };
 
+const setUserPosition = ({ commit }, payload) => {
+  commit('CAPTURE_USER_LATLNG', payload);
+};
+
 export default {
   setIPAddress,
-  captureUserIP,
-  captureUserInfo
+  captureUserInfo,
+  setUserPosition
 }

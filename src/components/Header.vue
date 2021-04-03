@@ -21,7 +21,8 @@
 
     methods: {
       ...mapActions([
-        'captureUserIP'
+        'setIPAddress',
+        'setUserPosition'
       ])
     },
 
@@ -30,8 +31,16 @@
       IpDetails
     },
 
-    created () {
-      this.captureUserIP();
+    async created () {
+      if (navigator.geolocation) {
+        await navigator.geolocation.watchPosition(geolocation => {
+          const { latitude, longitude } = geolocation.coords;
+
+          return this.setUserPosition(`${latitude}|${longitude}`);
+        });
+      }
+      
+      await this.setIPAddress('192.212.174.101');
     }
   }
 </script>
