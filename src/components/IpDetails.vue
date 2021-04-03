@@ -30,7 +30,9 @@
   export default {
     name: "IpDetails",
 
-    methods: mapActions([ 'captureUserInfo' ]),
+    methods: mapActions([
+      'captureUserInfo'
+    ]),
 
     computed: {
       ...mapState([
@@ -58,6 +60,7 @@
     width: 100%;
     height: auto;
     max-width: 90%;
+    z-index: 99 !important;
     border-radius: .375rem;
     background-color: $white;
 

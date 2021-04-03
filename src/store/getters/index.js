@@ -11,7 +11,14 @@ const location = state => {
     : '-';
 };
 
+const geolocation = state => {
+  return state.loc_geo.length
+    ? state.loc_geo.split('|').map(Number)
+    : [];
+};
+
 export default {
   timezone,
-  location
+  location,
+  geolocation
 }
