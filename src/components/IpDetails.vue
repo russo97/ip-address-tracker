@@ -25,21 +25,31 @@
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex';
+  import { mapState, mapGetters, mapActions } from 'vuex';
 
   export default {
     name: "IpDetails",
+
+    methods: mapActions([ 'captureUserInfo' ]),
 
     computed: {
       ...mapState([
         'ISP',
         'userIP',
-        'location'
       ]),
 
       ...mapGetters([
+        'location',
         'timezone'
       ])
+    },
+
+    watch: {
+      userIP (val) {
+        console.log(import.meta.env)
+
+        this.captureUserInfo();
+      }
     }
   }
 </script>
