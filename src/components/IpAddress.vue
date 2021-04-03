@@ -39,7 +39,7 @@
     width: 100%;
     height: 3.75rem;
     overflow: hidden;
-    margin-top: 24rem;
+    margin-top: 2.4rem;
     max-width: 34.875rem;
     border-radius: .375rem;
 

@@ -3,7 +3,7 @@
     <div class="details__container">
       <div class="details__box">
         <span class="details__title">ip address</span>
-        <span class="details__value">{{ ip_address }}</span>
+        <span class="details__value">{{ userIP }}</span>
       </div>
 
       <div class="details__box">
@@ -18,40 +18,25 @@
 
       <div class="details__box">
         <span class="details__title">isp</span>
-        <span class="details__value">{{ isp }}</span>
+        <span class="details__value">{{ ISP }}</span>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+  import { mapState } from 'vuex';
+
   export default {
     name: "IpDetails",
 
-    props: {
-      ip_address: {
-        type: String,
-        required: true,
-        default: 'loading...'
-      },
-
-      location: {
-        type: String,
-        required: true,
-        default: 'loading...'
-      },
-
-      timezone: {
-        type: String,
-        required: true,
-        default: 'loading...'
-      },
-
-      isp: {
-        type: String,
-        required: true,
-        default: 'loading...'
-      }
+    computed: {
+      ...mapState([
+        'ISP',
+        'userIP',
+        'location',
+        'timezone'
+      ])
     }
   }
 </script>

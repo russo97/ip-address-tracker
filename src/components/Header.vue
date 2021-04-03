@@ -5,7 +5,7 @@
 
       <IpAddress />
 
-      <IpDetails :ip_address="user_ip" />
+      <IpDetails />
     </div>
   </header>
 </template>
@@ -14,16 +14,15 @@
   import IpAddress from "./IpAddress.vue";
   import IpDetails from "./IpDetails.vue";
 
+  import { mapActions } from 'vuex';
+
   export default {
     name: "Header",
 
-    data () {
-      return {
-        isp: '',
-        user_ip: '8.8.8.8',
-        location: '',
-        timezone: ''
-      }
+    methods: {
+      ...mapActions([
+        'captureUserIP'
+      ])
     },
 
     components: {
@@ -31,16 +30,8 @@
       IpDetails
     },
 
-    async created () {
-      const ipinfo = await ( await fetch('http://www.geoplugin.net/json.gp') ).json();
-
-      this.user_ip = ipinfo.geoplugin_request;
-    },
-
-    watch: {
-      user_ip () {
-        console.log('user ip loaded')
-      }
+    created () {
+      this.captureUserIP();
     }
   }
 </script>
