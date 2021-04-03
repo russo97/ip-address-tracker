@@ -16,6 +16,8 @@
 
   import { mapActions } from 'vuex';
 
+  import '@/assets/images/pattern-bg.png';
+
   export default {
     name: "Header",
 
